@@ -1,13 +1,11 @@
 import "./questionPage.css";
-// import { FaRegArrowAltCircleRight } from "react-icons/fa";
-// import { FaCircle } from 'react-icons/fa'; // Import the icon from React Icons
+
 import { useContext, useState } from "react";
 import { UserLoginInfo } from "../../../App";
 import axios from "../../../axiosConfig";
 import { useRef } from "react";
 import Swal from "sweetalert2";
-// import { IoIosArrowDropright } from "react-icons/io";
-// import { GoDotFill } from "react-icons/go";
+
 import { BsDot } from "react-icons/bs";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";

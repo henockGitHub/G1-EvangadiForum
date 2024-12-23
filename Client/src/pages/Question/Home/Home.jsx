@@ -5,8 +5,9 @@ import thumnail from "../../../assets/images/thumnail2.jpg";
 import { Link } from "react-router-dom";
 import axios from "../../../axiosConfig";
 import { useNavigate } from "react-router-dom";
+import { IoIosArrowForward } from "react-icons/io";
 
-function Home() {
+const Home=()=> {
   const { user } = useContext(UserLoginInfo);
   const navigate = useNavigate();
 
@@ -74,20 +75,23 @@ function Home() {
               className={classes.link}
             >
               <article className={classes.question}>
-                <div className={classes.avatar}>
-                  <img
-                    src={thumnail}
-                    alt="User Avatar"
-                    className={classes.thumbnail}
-                    width="25"
-                    height="25"
-                  />
+                <div className="user_info">
+                  <div className={classes.avatar}>
+                    <img
+                      src={thumnail}
+                      alt="User Avatar"
+                      className={classes.thumbnail}
+                      width="25"
+                      height="25"
+                    />
+                  </div>
+                  <p className={classes.user_name}>{question.username}</p>
                 </div>
                 <div className={classes.question_content}>
                   <p className={classes.question_title}>{question.title}</p>
-                  <p className={classes.user_name}>{question.username}</p>
                 </div>
-                <div className={classes.arrow_icon}>&gt;</div>
+
+                <IoIosArrowForward size={25} />
               </article>
               <hr />
             </Link>
