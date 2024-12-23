@@ -6,7 +6,9 @@ import { UserLoginInfo } from "../../../App";
 import axios from "../../../axiosConfig";
 import { useRef } from "react";
 import Swal from "sweetalert2";
-import { IoIosArrowDropright } from "react-icons/io";
+// import { IoIosArrowDropright } from "react-icons/io";
+// import { GoDotFill } from "react-icons/go";
+import { BsDot } from "react-icons/bs";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 
@@ -42,27 +44,23 @@ function QuestionPage() {
     }
   }
   return (
-    <div>
+    <div className=" main_container">
       <div className="steps_toFollow">
-        <h3>Steps for writing a good question</h3>
-        <ul className={{}}>
+        <h3 className="guide_title">Steps for writing a good question</h3>
+        <ul>
           <li>
-            <IoIosArrowDropright size="25" style={{ gap: "30px" }} /> Summerize
-            your question in a one-line title.{" "}
+            <BsDot size="25" /> Summerize your question in a one-line title.
           </li>
           <li>
-            {" "}
-            <IoIosArrowDropright size="25" style={{ gap: "30px" }} />
+            <BsDot size="25" />
             Describe your problem in more detail.
           </li>
           <li>
-            {" "}
-            <IoIosArrowDropright size="25" style={{ gap: "30px" }} />
+            <BsDot size="25" style={{ gap: "0px" }} />
             Describe what you tried and what you expected to happen.
           </li>
           <li>
-            {" "}
-            <IoIosArrowDropright size="25" style={{ gap: "30px" }} />
+            <BsDot size="25" />
             Review your question and post it to the site.
           </li>
         </ul>
@@ -70,7 +68,7 @@ function QuestionPage() {
 
       <div className="question_form">
         <div className="question_title">
-          <h3>Post your questions</h3>
+          <h3>Ask a Public question</h3>
           {loading ? (
             <Box sx={{ display: "flex" }}>
               <CircularProgress />
@@ -86,9 +84,10 @@ function QuestionPage() {
             placeholder="Question Description..."
             ref={descriptionDom}
           />
-          <input type="text" placeholder="Questionid" ref={questionidDom} />
 
-          <button type="submit">Post Your Question</button>
+          <button type="submit" className="submit_button">
+            Ask a Question
+          </button>
         </form>
       </div>
     </div>
